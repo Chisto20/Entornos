@@ -1,0 +1,200 @@
+<html lang="es">
+
+<head>
+    <title>Pixel Art Maker!</title>
+    <link href="https://fonts.googleapis.com/css?family=Ewert" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            text-align: center;
+            background: url("https://fondosdepantallaymuchomas.files.wordpress.com/2010/09/415.jpg");
+            background-size: 100% 122%;
+            background-repeat: no-repeat;
+        }              
+
+        h1 {
+            font-family: 'Ewert', cursive;
+            font-size: 60px;
+            margin: 0.90em;
+            text-shadow: 3px 3px 1px rgba(150, 150, 150, 1);
+        }
+
+        h2 {
+            font-family: 'Lobster', cursive;
+            margin: 1em 0 0.25em;
+        }
+
+        h2:first-of-type {
+            margin-top: 0.5em;
+        }
+
+        h3 {
+        font-family: 'Dancing Script', cursive;
+        color: #E00C0C;
+        margin-top: 0.5em;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1.5px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        tr {
+            height: 20px;
+        }
+
+        td {
+            width: 20px;
+        }
+
+        input[type=number] {
+            width: 6em;
+        }
+
+        input[type=submit] {
+            width: 100px;
+            height: 25px;
+            background: #000;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 3px;
+        }
+
+        input[type=submit]:hover {
+            background: #9d2028;
+            cursor: pointer;
+        }
+
+        input[type=color] {
+            background: #fff;
+            border-radius: 5px;
+            width: 60px;
+            height: 25px;
+        }
+
+        .eraser {
+            margin: 0 auto 15px auto;
+        }
+
+        .eraser {
+            display: inline-block;
+            border: 2px solid;
+            border-style: outset;
+            border-radius: 5px;
+            width: 50px;
+            height: 20px;
+        }
+
+        .predefinedColors {
+            margin: 0 auto 15px auto;
+        }
+
+        .predefinedColors div {
+            display: inline-block;
+            border: 2px solid #848484;
+            border-radius: 25px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #white {
+            background: #fff;
+        }
+
+        #red {
+            background: #FF0000;
+        }
+
+        #yellow {
+            background: #F4FA58;
+        }
+
+        #green {
+            background: #33AF4B;
+        }
+
+        #cian {
+            background: #219EF2;
+        }
+
+        #blue {
+            background: #2442F2;
+        }
+
+        #purple {
+            background: #9038C9;
+        }
+
+        #pink {
+            background: #E53CAC;
+        }
+
+        .footer {    
+            height: 100px;
+            left: 0;    
+            position: absolute;
+            width: 100%;
+            background-color: rgba(192,192,192,0.3);
+            font-style: italic;
+            line-height: 50%;    
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sonia's Pixel Art Maker</h1>
+
+    <h2>Choose Grid Size</h2>
+    <form id="sizePicker">
+        Grid Height:
+        <input type="number" id="input_height" name="height" min="1" max="40" value="20">
+        Grid Width:
+        <input type="number" id="input_weight" name="width" min="1" max="40" value="20">
+        <input type="submit" id="createGrid" value="Create Grid">
+    </form>
+    <h3>The maximum size of your grid is 40x40</h3>
+
+    <h2>Pick A Color</h2>
+    <div class="eraser">
+        <div id="white"></div>
+    </div>
+    <div class="predefinedColors">
+        <div id="red"></div>
+        <div id="yellow"></div>
+        <div id="green"></div>
+        <div id="cian"></div>
+        <div id="blue"></div>
+        <div id="purple"></div>
+        <div id="pink"></div>
+    </div>
+    <label for="colorPicker">Customize color: </label>
+    <input type="color" id="colorPicker">
+    <h3>You can use white color as eraser</h3>
+
+    <h2>Design Canvas</h2>
+    <table id="pixel_canvas"></table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="designs.js"></script>
+    </div>
+    <div class="footer">
+        <p>Made by Sonia</p>
+        <p>February 2018</p>
+        <p>Google Developer Challenge Scholarship Front End Web Dev Course</p>
+    </div>
+    </div>
+
+    
+</body>
+
+</html>
