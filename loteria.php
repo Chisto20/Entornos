@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <title>Algoritmo</title>
+        <title>Loteria</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     </head>
     <body>
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
                 <tbody>
                     <tr>
                         <td>
-                            <label for="numero_ingresado_1">Ingrese el valor de numero ingresado 1:</label>
+                            <label for="numero_ingresado_1">Primer nmero</label>
                         </td>
                         <td>
                             <input name="numero_ingresado_1" required="required" step="1" type="number" />
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
                     </tr>
                     <tr>
                         <td>
-                            <label for="numero_ingresado_2">Ingrese el valor de numero ingresado 2:</label>
+                            <label for="numero_ingresado_2">Segundo numero</label>
                         </td>
                         <td>
                             <input name="numero_ingresado_2" required="required" step="1" type="number" />
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
                     </tr>
                     <tr>
                         <td>
-                            <label for="numero_ingresado_3">Ingrese el valor de numero ingresado 3:</label>
+                            <label for="numero_ingresado_3">Tercer numero</label>
                         </td>
                         <td>
                             <input name="numero_ingresado_3" required="required" step="1" type="number" />
