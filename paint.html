@@ -194,7 +194,84 @@
     </div>
     </div>
 
-    
+    <script>
+
+        // Defining function used to make grid
+        function makeGrid() {
+            // Setting variables for width and height
+            const inputWidth = $('#input_weight').val();
+            const inputHeight = $('#input_height').val();
+            // Removing previous grid if it exists
+            $('tr').remove();
+
+            for (let i = 0; i < inputHeight; i++) {
+                $('#pixel_canvas').append('<tr></tr>');
+                for (let i = 0; i < inputWidth; i++) {
+                    $('tr:last-of-type').append('<td></td>');
+                };
+            };
+        }
+
+        //Get table
+        var table = $("#pixel_canvas");
+
+        // Defining function for rgb() to hex color conversion
+        function searchRGB() {
+            let i = colorPicked;
+            let rgbValues = i.split("(")[1].split(")")[0].split(", ");
+            return rgbValues;
+        }
+
+        function componentToHex(c) {
+            var hex = Number(c).toString(16);
+            return hex.length == 1 ? "0" + hex : hex;
+        }
+
+        function rgbToHex(r, g, b) {
+            return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+        }
+
+        // Calling the function makeGrid()
+        $('#sizePicker').submit(function (evt) {
+            evt.preventDefault();
+            makeGrid();
+        })
+
+        // Select color input
+        let colorPicked = $('#colorPicker').val();
+        $('#colorPicker').on('change', function () {
+            colorPicked = $('#colorPicker').val();
+        });
+        $('.predefinedColors').on('click', function (evt) {
+            colorPicked = $(evt.target).css("background-color");
+            $('#colorPicker').val(rgbToHex(searchRGB()[0], searchRGB()[1], searchRGB()[2]));
+        });
+        $('.eraser').on('click', function (evt) {
+            colorPicked = $(evt.target).css("background-color");
+        });
+
+        // Drawing on the canvas stuff
+        let isDrawing = false;
+        $('#pixel_canvas').on('mousedown', 'td', function (evt) {
+            evt.preventDefault();
+            isDrawing = true;
+            if (isDrawing) {
+                $(evt.target).css('background-color', colorPicked);
+            };
+        });
+        $('#pixel_canvas').on('mouseenter', 'td', function (evt) {
+            if (isDrawing) {
+                $(evt.target).css('background-color', colorPicked);
+            }
+        });
+        $('#pixel_canvas').on('mouseup', 'td', function (evt) {
+            isDrawing = false;
+        });
+        $('#pixel_canvas').on('mouseleave', function (evt) {
+            isDrawing = false;
+        });
+    </script>
+
 </body>
 
 </html>
