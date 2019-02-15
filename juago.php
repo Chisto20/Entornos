@@ -24,8 +24,8 @@
                 </p>
                 <p><input type="submit" value="Jugar" /></p>
                 <?php  
-                    $num=$_POST["num"];
-                    $modo=$_POST["modo"];
+                    @$num=$_POST["num"];
+                    @$modo=$_POST["modo"];
                     if ($modo=="") {
                         $saldo=2000;
                     }else {
