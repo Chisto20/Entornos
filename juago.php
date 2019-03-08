@@ -10,7 +10,7 @@
             [type~=submit]  { font-size: 1.1em; }
         </style>
     </head>
-    <body>
+    <body style="background-color: orange;">
         <div style="text-align: center;">
             <h1>Juego aleatorio</h1>
             <h4>Dispones de un saldo virtual inicial de 2000 €, Debes acertar un número del 1 al 3, si lo
