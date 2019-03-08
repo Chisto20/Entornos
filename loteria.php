@@ -4,7 +4,7 @@
         <title>Loteria</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     </head>
-    <body>
+    <body style="background-color: lightyellow;">
 
     <?php
 
@@ -30,20 +30,23 @@
             $premio=450;
         if($aciertos==3)
             $premio=2000;
-        echo 'Valor de aciertos: ' . $aciertos . "<br/>\n";
+
+        echo '<center><h3>Los resultados de tu loteria.</h3><br>';
+        echo '<strong>Valor de aciertos: ' . $aciertos . "<br/>\n</strong>";
         echo 'Valor de aleatorio 1: ' . $aleatorio_1 . "<br/>\n";
         echo 'Valor de aleatorio 2: ' . $aleatorio_2 . "<br/>\n";
         echo 'Valor de aleatorio 3: ' . $aleatorio_3 . "<br/>\n";
-        echo 'Valor de premio: ' . $premio . "<br/>\n";
+        echo 'Valor de premio: ' . $premio . "<br/>\n</center>";
     }
     
     ?>
         <form method="post">
+            <center><h1>LOTERÍA</h1></center>
             <table style="text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="1" cellspacing="1">
-                <tbody>
+                <tbody style="background-color:darkgoldenrod;">
                     <tr>
                         <td>
-                            <label for="numero_ingresado_1">Primer nmero</label>
+                            <label for="numero_ingresado_1">Primer numero</label>
                         </td>
                         <td>
                             <input name="numero_ingresado_1" required="required" step="1" type="number" />
